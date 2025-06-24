@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pine Zoo City</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Helvetica, Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    /* Header styling */
+    #header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      background-image: url('wood-bg.png');
+      background-repeat: repeat-x;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #header img {
+      height: 60px;
+    }
+
+    /* Main content padding to prevent overlap with fixed header */
+    #main-home {
+  position: absolute;
+  top: 130px; /* 80px header + 50px top tabs */
+  bottom: 60px; /* space for bottom tabs */
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+#main-home img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures it fills without distortion */
+}
+
+    /* Top and Bottom tabs */
+    #tabs-top,
+    #tabs-bottom {
+      display: flex;
+      justify-content: space-around;
+      background-color: #006400;
+      padding: 12px 0;
+      position: fixed;
+      width: 100%;
+      z-index: 999;
+    }
+
+    #tabs-top {
+      top: 80px;
+    }
+
+    #tabs-bottom {
+      bottom: 0;
+    }
+
+    #tabs-top a,
+    #tabs-bottom a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 5px;
+      background-color: #228B22;
+      transition: background-color 0.3s ease;
+    }
+
+    #tabs-top a:hover,
+    #tabs-bottom a:hover {
+      background-color: #32CD32;
+    }
+
+    /* For touch devices */
+    #tabs-top a:active,
+    #tabs-bottom a:active {
+      background-color: #90EE90;
+    }
+
+    @media screen and (max-width: 600px) {
+      #tabs-top a,
+      #tabs-bottom a {
+        padding: 8px 10px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="header">
+    <img src="logo.png" alt="Pine Zoo Logo" />
+  </div>
+
+  <div id="tabs-top">
+    <a href="animal.html">ANIMALS</a>
+    <a href="homepage">MAP</a>
+    <a href="places.html">PLACES</a>
+  </div>
+
+  <div id="main-home">
+    <img src="map.png" alt="Zoo Map">
+  </div>
+
+  <div id="tabs-bottom">
+    <a href="weather.html">WEATHER</a>
+    <a href="feedack.html">FEEDBACK</a>
+  </div>
+
+</body>
+</html>

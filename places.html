@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pine City Zoo - Places</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Helvetica, Arial, sans-serif;
+      background: url('map-blur.png') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    #header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 90px;
+      background-image: url('wood-bg.png');
+      background-repeat: repeat-x;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #header img {
+      height: 60px;
+    }
+
+    #tabs-top {
+      position: fixed;
+      top: 90px;
+      width: 100%;
+      background-color: #006400;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+      z-index: 999;
+    }
+
+    #tabs-top a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      background-color: #228B22;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    #tabs-top a:hover {
+      background-color: #32CD32;
+    }
+
+    #main {
+      margin-top: 150px;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      justify-items: center;
+    }
+
+    .card {
+      width: 280px;
+      height: 360px;
+      perspective: 1000px;
+    }
+
+    .card-inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    .card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .card-front {
+      background-color: #fff;
+    }
+
+    .card-front img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-back {
+      background-color: #2e8b57;
+      color: white;
+      transform: rotateY(180deg);
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      font-size: 1em;
+    }
+
+    .card-back h2 {
+      margin: 5px 0;
+      font-size: 1.3em;
+    }
+
+    .card-back p {
+      margin: 5px 0;
+    }
+
+    #tabs-bottom {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #006400;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+      z-index: 999;
+    }
+
+    #tabs-bottom a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      background-color: #228B22;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    #tabs-bottom a:hover {
+      background-color: #2e8b57;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="header">
+    <img src="logo.png" alt="Pine City Zoo Logo">
+  </div>
+
+  <div id="tabs-top">
+    <a href="animals.html">ANIMALS</a>
+    <a href="homepage.html">MAP</a>
+    <a href="places.html">PLACES</a>
+  </div>
+
+  <div id="main">
+    <!-- Amphitheater -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="garden-amphitheater.jpg" alt="Amphitheater">
+        </div>
+        <div class="card-back">
+          <h2>Amphitheater</h2>
+          <p>Location: Near Main Gate</p>
+          <p>Open: 8:00 AM - 10:00 PM</p>
+          <p>Catch an educational and entertaining event!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Coffee Shop -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="coffee-shop.jpg" alt="Coffee Shop">
+        </div>
+        <div class="card-back">
+          <h2>Coffee Shop</h2>
+          <p>Location: East Side</p>
+          <p>Open: 8:00 AM - 10:00 PM</p>
+          <p>Come and enjoy a steaming cuppa!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Insect House -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Insect.jpg" alt="Insect House">
+        </div>
+        <div class="card-back">
+          <h2>Insect House</h2>
+          <p>Location: Nature Zone</p>
+          <p>Open: 8:00 AM - 10:00 PM</p>
+          <p>See all the fascinating creepy crawlies.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Monkey Trail -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="monkey-trail.jpg" alt="Monkey Trail">
+        </div>
+        <div class="card-back">
+          <h2>Monkey Trail</h2>
+          <p>Location: Jungle Path</p>
+          <p>Open: 8:00 AM - 10:00 PM</p>
+          <p>Stroll along and feed monkeys.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lost Forest -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="lostforest.gif" alt="Lost Forest">
+        </div>
+        <div class="card-back">
+          <h2>Lost Forest</h2>
+          <p>Location: West Trail</p>
+          <p>Open: 8:00 AM - 10:00 PM</p>
+          <p>Enjoy a stroll under shady trees.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Restaurant -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="outdoor_restaurant.jpg" alt="Restaurant">
+        </div>
+        <div class="card-back">
+          <h2>Restaurant</h2>
+          <p>Location: Safari Deck</p>
+          <p>Open: 8:00 AM - 10:00 PM</p>
+          <p>Dine with us while you view the animals.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Aquarium -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="Aquarium.jpg" alt="Aquarium">
+        </div>
+        <div class="card-back">
+          <h2>Aquarium</h2>
+          <p>Location: Ocean Dome</p>
+          <p>Open: 8:00 AM - 10:00 PM</p>
+          <p>Come and see the underwater world!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tabs-bottom">
+    <a href="weather.html">WEATHER</a>
+    <a href="feedback.html">FEEDBACK</a>
+  </div>
+
+</body>
+</html>
